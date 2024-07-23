@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Abayo Hirwa jovin",
@@ -18,12 +18,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="./favicon.ico" />
       </head>
-      <body>
+      <body className="bg-white dark:bg-black">
         <Navbar />
-        <main className="relative overflow-hidden">
-          {children}
-        </main>
-        {/* <Footer /> */}
+        <main className="relative overflow-hidden">{children}</main>
+        <Footer />
       </body>
     </html>
   );

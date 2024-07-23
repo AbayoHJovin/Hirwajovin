@@ -26,13 +26,16 @@ export default function About() {
     { lang: "Tailwindcss", level: "90%", logo: <SiTailwindcss /> },
     { lang: "Bootstrap", level: "90%", logo: <BsBootstrap /> },
   ];
-  const getColorClass = (percentage:any) => {
-    if (percentage >= 75) return 'bg-green-500';
-    if (percentage >= 50) return 'bg-yellow-500';
-    return 'bg-red-500';
+  const getColorClass = (percentage: any) => {
+    if (percentage >= 75) return "bg-green-500";
+    if (percentage >= 50) return "bg-yellow-500";
+    return "bg-red-500";
   };
   return (
-    <div>
+    <div
+      id="about"
+      className="bg-white dark:bg-black text-black dark:text-white"
+    >
       <div className="flex justify-center font-bold text-3xl my-5">
         <h1>About me</h1>
       </div>
@@ -46,7 +49,7 @@ export default function About() {
             />
           </div>
           <div className="space-y-5 flex flex-col lg:items-start">
-            <h1 className="w-full lg:max-w-[741px] text-xl text-[18px] text-gray-700 font-[400] bg-transparent px-2 md:px-0 text-start lg:text-left">
+            <h1 className="w-full lg:max-w-[741px] text-xl text-[18px] text-[#6b7280] font-[400] bg-transparent px-2 md:px-0 text-start lg:text-left">
               I'm a full-stack web developer with a passion for building
               beautiful, functional, and scalable web applications. I'm
               currently a student at Rwanda Coding Academy learning software
@@ -62,49 +65,59 @@ export default function About() {
             </div>
             <div className="rounded-lg bg-transparent space-y-4 text-start px-6 lg:px-0 lg:text-left">
               <h2 className="text-2xl font-bold mb-4">Personal Info</h2>
-              <p className="text-lg text-gray-700">Name: Abayo Hirwa Jovin</p>
-              <p className="text-lg text-gray-700">Age: 16</p>
-              <p className="text-lg text-gray-700">Location: Rwanda</p>
-              <p className="text-lg text-gray-700">
+              <p className="text-lg text-[#6b7280]">Name: Abayo Hirwa Jovin</p>
+              <p className="text-lg text-[#6b7280]">Age: 16</p>
+              <p className="text-lg text-[#6b7280]">Location: Rwanda</p>
+              <p className="text-lg text-[#6b7280]">
                 Email: abayohirwajovin@gmail.com
               </p>
             </div>
             <div className="space-y-4 text-start px-6 lg:px-0 lg:text-left">
               <h2 className="text-2xl font-bold mb-4">Tech Stack</h2>
               <div className="skills-container flex flex-col md:flex-row flex-wrap justify-center">
-    <div className="skill-card bg-gray-800 shadow-lg p-8 m-4 rounded-lg text-white">
-      <h1 className="font-bold text-2xl mb-4">Frontend Development</h1>
-      {frontend.map((skill, index) => (
-        <div key={index} className="flex items-center text-lg space-x-4 mb-4">
-          <div className="text-3xl">{skill.logo}</div>
-          <h1 className="w-24">{skill.lang}</h1>
-          <div className="skill-level w-full bg-gray-700 rounded-full h-2.5 overflow-hidden">
-            <div
-              className={`${getColorClass(skill.level)} h-full`}
-              style={{ width: `${skill.level}%` }}
-            ></div>
-          </div>
-          <h1 className="w-12 text-right">{skill.level}</h1>
-        </div>
-      ))}
-    </div>
-    <div className="skill-card bg-gray-800 shadow-lg p-8 m-4 rounded-lg text-white">
-      <h1 className="font-bold text-2xl mb-4">Backend Development</h1>
-      {backend.map((skill, index) => (
-        <div key={index} className="flex items-center text-lg space-x-4 mb-4">
-          <div className="text-3xl">{skill.logo}</div>
-          <h1 className="w-24">{skill.lang}</h1>
-          <div className="skill-level w-full bg-gray-700 rounded-full h-2.5 overflow-hidden">
-            <div
-              className={`${getColorClass(skill.level)} h-full`}
-              style={{ width: `${skill.level}%` }}
-            ></div>
-          </div>
-          <h1 className="w-12 text-right">{skill.level}</h1>
-        </div>
-      ))}
-    </div>
-  </div>
+                <div className="skill-card bg-gray-800 shadow-lg p-8 m-4 rounded-lg text-white">
+                  <h1 className="font-bold text-2xl mb-4">
+                    Frontend Development
+                  </h1>
+                  {frontend.map((skill, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center text-lg space-x-4 mb-4"
+                    >
+                      <div className="text-3xl">{skill.logo}</div>
+                      <h1 className="w-24">{skill.lang}</h1>
+                      <div className="skill-level w-full bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                        <div
+                          className={`${getColorClass(skill.level)} h-full`}
+                          style={{ width: `${skill.level}%` }}
+                        ></div>
+                      </div>
+                      <h1 className="w-12 text-right">{skill.level}</h1>
+                    </div>
+                  ))}
+                </div>
+                <div className="skill-card bg-gray-800 shadow-lg p-8 m-4 rounded-lg text-white">
+                  <h1 className="font-bold text-2xl mb-4">
+                    Backend Development
+                  </h1>
+                  {backend.map((skill, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center text-lg space-x-4 mb-4"
+                    >
+                      <div className="text-3xl">{skill.logo}</div>
+                      <h1 className="w-24">{skill.lang}</h1>
+                      <div className="skill-level w-full bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                        <div
+                          className={`${getColorClass(skill.level)} h-full`}
+                          style={{ width: `${skill.level}%` }}
+                        ></div>
+                      </div>
+                      <h1 className="w-12 text-right">{skill.level}</h1>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

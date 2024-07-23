@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import Starfield from "./starField";
 import { FaArrowRight } from "react-icons/fa";
@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden mx-0">
+    <div className="relative w-full h-screen overflow-hidden mx-0" id="home">
       {/* Background container */}
       <div className="absolute inset-0 z-0">
         <Canvas
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-30 flex flex-col lg:flex-row text-center lg:text-start justify-around space-x-6 items-center w-full h-full text-black  rounded-lg shadow-lg">
+      <div className="relative bg-transparent text-black dark:text-white z-30 flex flex-col lg:flex-row text-center lg:text-start justify-around space-x-6 items-center w-full h-full  rounded-lg shadow-lg">
         <div className="lg:hidden">
           <Image
             src="/heroImage.png"
@@ -37,15 +37,18 @@ const Hero: React.FC = () => {
             <p className="font-[600] text-xl sm:text-2xl text-center lg:text-left">
               I am a software developer
             </p>
-            <p className="text-gray-700 text-lg max-w-[30rem] text-center lg:text-left">
+            <p className="text-[#6b7280] text-lg max-w-[30rem] text-center lg:text-left">
               I am a fullstack web developer. Open source Enthusiast and
               competitive programmer
             </p>
             <div className="flex justify-center lg:justify-start">
-              <div className="bg-blue-600 flex justify-center lg:justify-start p-2 text-center items-center space-x-3 w-[150px] px-6 rounded-md text-white">
+              <a
+                href="#contacts"
+                className="bg-blue-600 flex justify-center lg:justify-start p-2 text-center items-center space-x-3 w-[150px] px-6 rounded-md text-white"
+              >
                 <button>Let&apos;s talk</button>
                 <FaArrowRight className="text-white" />
-              </div>
+              </a>
             </div>
           </div>
         </div>

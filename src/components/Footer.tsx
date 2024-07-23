@@ -3,7 +3,7 @@ import { CgCopyright } from "react-icons/cg";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 px-10 py-4 text-[#6b7280]">
+    <footer className="bg-gray-100 dark:bg-[#000308] px-10 py-4 text-[#6b7280]">
       <div className="container mx-auto text-center flex flex-col items-center justify-center md:justify-between">
         <div className="flex items-center text-sm md:text-base">
           <CgCopyright className="mr-2" />

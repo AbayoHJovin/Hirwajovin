@@ -23,10 +23,10 @@ const Contacts = () => {
   ];
 
   return (
-    <div className="my-5 px-4">
-      <div className="text-center my-5">
+    <div className="my-5 px-4" id="contacts">
+      <div className="text-center my-5 text-black dark:text-white">
         <h1 className="font-bold text-3xl">Contact Me</h1>
-        <p className="text-sm md:text-base mt-2">
+        <p className="text-sm md:text-base text-[#6b7280] mt-2">
           Let's talk about something interesting
         </p>
       </div>
@@ -42,11 +42,11 @@ const Contacts = () => {
         </div>
         <div className="md:w-1/2 p-4">
           <h1 className="font-semibold text-2xl md:text-3xl">Get In Touch</h1>
-          <p className="text-gray-700 text-lg md:text-xl max-w-[586px] font-[550] mt-2">
+          <p className="text-[#6b7280] text-lg md:text-xl max-w-[586px] font-[550] mt-2">
             I am available on different social media platforms, and you can
             reach out to me to create something amazing.
           </p>
-          <p className="text-gray-700 text-lg md:text-xl font-[550] mt-2">
+          <p className="text-[#6b7280] text-lg md:text-xl font-[550] mt-2">
             You can find me on:
           </p>
           <div className="flex flex-wrap text-4xl my-5 space-x-5">

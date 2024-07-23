@@ -29,8 +29,8 @@ const Projects = () => {
   };
 
   return (
-    <div className="space-y-5">
-      <div className="flex justify-center font-bold text-3xl my-5">
+    <div className="space-y-5" id="projects">
+      <div className="flex justify-center font-bold text-3xl my-5 text-black dark:text-white">
         <h1>Projects</h1>
       </div>
       <div
@@ -40,7 +40,7 @@ const Projects = () => {
         {projectsToShow.map((project, index) => (
           <div
             key={index}
-            className="relative p-3 bg-gray-100 group rounded-md transition-transform duration-300 transform hover:scale-105"
+            className="relative p-3 bg-gray-100 dark:bg-[#18141c] group rounded-md transition-transform duration-300 transform hover:scale-105"
           >
             <Image
               src={project.demoImg}
@@ -68,9 +68,11 @@ const Projects = () => {
                 <FaGithub className="text-xl" />
               </a>
             </div>
-            <div className="p-4 bg-gray-100 rounded-b-lg">
-              <h2 className="text-xl font-semibold">{project.name}</h2>
-              <p className="text-gray-600">Tech Stack: {project.madeWith}</p>
+            <div className="p-4 rounded-b-lg">
+              <h2 className="text-xl font-semibold text-black dark:text-white">
+                {project.name}
+              </h2>
+              <p className="text-[#6b7280]">Tech Stack: {project.madeWith}</p>
             </div>
           </div>
         ))}

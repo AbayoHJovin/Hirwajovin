@@ -3,10 +3,12 @@ import React from "react";
 
 const Education = () => {
   return (
-    <div className="my-5 px-4">
+    <div className="my-5 px-4" id="edu">
       <div className="text-center my-5">
-        <h1 className="font-bold text-3xl">My Education</h1>
-        <p className="text-sm md:text-base mt-2">
+        <h1 className="font-bold text-3xl text-black dark:text-white">
+          My Education
+        </h1>
+        <p className="text-sm md:text-base mt-2 text-[#6b7280]">
           Education Is Not The Learning Of Facts, But The Training Of The Mind
           To Think.
         </p>
@@ -25,7 +27,7 @@ const Education = () => {
             <h2 className="font-bold text-xl md:text-2xl">
               Bachelor Of Computer Science (BCS)
             </h2>
-            <p className="text-sm md:text-base mt-2">
+            <p className="text-sm font-[500] text-[#6b7280] md:text-base mt-2">
               Rwanda Coding Academy Of Software Development | RCA
             </p>
           </div>

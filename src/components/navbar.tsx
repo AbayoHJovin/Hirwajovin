@@ -1,22 +1,30 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FaMoon } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
 import { CgClose } from "react-icons/cg";
 import Image from "next/image";
 import { IconButton, Drawer, List, ListItem } from "@mui/material";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
-    { name: "Education", href: "/edu" },
-    { name: "Contact", href: "/contacts" },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Education", href: "#edu" },
+    { name: "Contact", href: "#contacts" },
   ];
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
 
   const toggleDrawer = (open: boolean) => (event: any) => {
     if (
@@ -27,11 +35,18 @@ export default function Navbar() {
     }
     setDrawerOpen(open);
   };
-
+  function toggleTheme() {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [setTheme, theme]);
   return (
-    <nav className="flex items-center p-4 justify-between px-10 lg:px-36 sticky top-0 z-50 bg-opacity-85 backdrop-blur-2xl">
+    <nav
+      className={`flex items-center p-4  justify-between px-10 text-black bg-transparent dark:text-white lg:px-36 sticky top-0 z-50 bg-opacity-85 backdrop-blur-2xl`}
+    >
       <Image
-        src="/user.png"
+        src="/heroImage.png"
         alt="Logo"
         width={50}
         height={50}
@@ -51,11 +66,25 @@ export default function Navbar() {
           ))}
         </div>
       </div>
-      <FaMoon className=" hidden sm:block cursor-pointer" />
+      {theme === "dark" ? (
+        <FaSun
+          onClick={toggleTheme}
+          className=" hidden sm:block cursor-pointer"
+        />
+      ) : (
+        <FaMoon
+          onClick={toggleTheme}
+          className=" hidden sm:block cursor-pointer"
+        />
+      )}
       {/* For smaller devices */}
       <div className="block sm:hidden">
         <div className="flex items-center space-x-4">
-          <FaMoon />
+          {theme === "dark" ? (
+            <FaSun onClick={toggleTheme} />
+          ) : (
+            <FaMoon onClick={toggleTheme} />
+          )}
           <IconButton
             size="large"
             edge="start"
@@ -85,12 +114,15 @@ export default function Navbar() {
             onClick={toggleDrawer(false)}
             className="flex text-2xl justify-end font-bold cursor-pointer"
           >
-            <CgClose />
+            <CgClose className="text-black dark:text-white" />
           </div>
           <List>
             {links.map((link, index) => (
               <ListItem key={index} button onClick={toggleDrawer(false)}>
-                <Link href={link.href} className="w-full block text-lg mb-2">
+                <Link
+                  href={link.href}
+                  className="w-full block text-lg mb-2 text-black dark:text-white"
+                >
                   {link.name}
                 </Link>
               </ListItem>

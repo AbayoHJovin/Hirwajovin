@@ -7,13 +7,12 @@ import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 export default function Home() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 dark:bg-black bg-white">
       <Hero />
       <About />
       <Projects />
       <Education />
       <Contacts />
-      <Footer/>
     </div>
   );
 }
