@@ -49,9 +49,23 @@ export default function Navbar() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
 
+  function handleLinkClick(event: React.MouseEvent, href: string) {
+    event.preventDefault();
+    const offset = 90;
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - offset;
+      window.scrollBy({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  }
+
   return (
     <nav
-      className={`flex items-center p-4  justify-between px-10 text-black bg-transparent dark:text-white lg:px-36 sticky top-0 z-50 bg-opacity-85 backdrop-blur-2xl`}
+      className={`flex items-center p-4 justify-between px-10 text-black bg-transparent dark:text-white lg:px-36 sticky top-0 z-50 bg-opacity-85 backdrop-blur-2xl`}
     >
       <Image
         src="/heroImage.png"
@@ -68,6 +82,7 @@ export default function Navbar() {
               key={index}
               href={link.href}
               className="cursor-pointer hover:text-blue-600"
+              onClick={(e) => handleLinkClick(e, link.href)}
             >
               {link.name}
             </Link>
@@ -130,6 +145,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className="w-full block text-lg mb-2 text-black dark:text-white"
+                  onClick={(e) => handleLinkClick(e, link.href)}
                 >
                   {link.name}
                 </Link>

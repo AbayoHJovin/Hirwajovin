@@ -43,7 +43,7 @@ export default function About() {
         <div className="flex flex-col lg:flex-row justify-center lg:space-x-10 px-0 sm:px-6">
           <div className="flex justify-center lg:justify-start mb-5 lg:mb-0">
             <img
-              src="/user.png"
+              src="/heroImage.png"
               alt="me"
               className="rounded-md w-48 h-48 lg:w-60 lg:h-60"
             />
