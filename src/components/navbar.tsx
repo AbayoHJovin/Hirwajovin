@@ -9,7 +9,7 @@ import { IconButton, Drawer, List, ListItem } from "@mui/material";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState("light");
 
   const links = [
     { name: "Home", href: "#home" },
@@ -18,12 +18,21 @@ export default function Navbar() {
     { name: "Education", href: "#edu" },
     { name: "Contact", href: "#contacts" },
   ];
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleDrawer = (open: boolean) => (event: any) => {
@@ -35,12 +44,11 @@ export default function Navbar() {
     }
     setDrawerOpen(open);
   };
+
   function toggleTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [setTheme, theme]);
+
   return (
     <nav
       className={`flex items-center p-4  justify-between px-10 text-black bg-transparent dark:text-white lg:px-36 sticky top-0 z-50 bg-opacity-85 backdrop-blur-2xl`}
