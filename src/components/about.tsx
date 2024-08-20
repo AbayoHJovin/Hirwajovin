@@ -29,7 +29,7 @@ export default function About() {
   const getColorClass = (percentage: any) => {
     if (percentage >= 75) return "bg-green-500";
     if (percentage >= 50) return "bg-yellow-500";
-    return "bg-red-500";
+    return "bg-blue-500";
   };
   return (
     <div
@@ -75,7 +75,7 @@ export default function About() {
             <div className="space-y-4 text-start px-6 lg:px-0 lg:text-left">
               <h2 className="text-2xl font-bold mb-4">Tech Stack</h2>
               <div className="skills-container flex flex-col md:flex-row flex-wrap justify-center">
-                <div className="skill-card bg-gray-800 shadow-lg p-8 m-4 rounded-lg text-white">
+                <div className="skill-card bg-gray-200 dark:bg-gray-800 shadow-lg p-8 m-4 rounded-lg text-black dark:text-white">
                   <h1 className="font-bold text-2xl mb-4">
                     Frontend Development
                   </h1>
@@ -96,7 +96,7 @@ export default function About() {
                     </div>
                   ))}
                 </div>
-                <div className="skill-card bg-gray-800 shadow-lg p-8 m-4 rounded-lg text-white">
+                <div className="skill-card bg-gray-200 dark:bg-gray-800  shadow-lg p-8 m-4 rounded-lg text-black dark:text-white">
                   <h1 className="font-bold text-2xl mb-4">
                     Backend Development
                   </h1>
