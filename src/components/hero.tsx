@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
       <div className="relative bg-transparent text-black dark:text-white z-30 flex flex-col lg:flex-row text-center lg:text-start justify-around space-x-6 items-center w-full h-full  rounded-lg shadow-lg">
         <div className="lg:hidden">
           {loading ? (
-            <Skeleton width={200} height={200} circle={true} />
+            <Skeleton width={300} height={300} circle={true} />
           ) : (
             <Image
               src="/heroImage.png"
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
 
         <div className="hidden lg:block">
           {loading ? (
-            <Skeleton width={300} height={50} circle={true} />
+            <Skeleton width={300} height={300} circle={true} />
           ) : (
             <Image
               src="/heroImage.png"

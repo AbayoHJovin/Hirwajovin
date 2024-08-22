@@ -9,10 +9,7 @@ interface StarfieldProps {
 
 const Starfield: React.FC<StarfieldProps> = ({ numStars = 2000 }) => {
   const pointsRef = useRef<THREE.Points>(null);
-  const texture = useTexture(
-    // "https://threejs.org/examples/textures/sprites/disc.png"
-    "/circle.png"
-  );
+  const texture = useTexture("/circle.png");
 
   useEffect(() => {
     const geometry = pointsRef.current?.geometry;
