@@ -53,7 +53,7 @@ const Education = () => {
               </>
             ) : (
               <>
-                <h2 className="font-bold text-xl md:text-2xl">
+                <h2 className="font-bold text-xl md:text-2xl text-black dark:text-black">
                   Bachelor Of Computer Science (BCS)
                 </h2>
                 <p className="text-sm font-[500] text-[#6b7280] md:text-base mt-2">

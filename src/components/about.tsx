@@ -53,7 +53,6 @@ export default function About() {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
-
   return (
     <div
       id="about"
@@ -96,9 +95,11 @@ export default function About() {
               {loading ? (
                 <Skeleton width={200} height={50} />
               ) : (
-                <button className="p-2 px-4 text-white bg-blue-600 rounded-md">
-                  Resume
-                </button>
+                <a href="/Jovin.pdf">
+                  <button className="p-2 px-4 text-white bg-blue-600 rounded-md">
+                    Resume
+                  </button>
+                </a>
               )}
             </div>
             <div className="rounded-lg bg-transparent space-y-4 text-start px-6 lg:px-0 lg:text-left">

@@ -108,16 +108,11 @@ export default function Navbar() {
           ) : (
             <FaMoon onClick={toggleTheme} />
           )}
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2, display: { sm: "none" } }}
+
+          <AiOutlineMenu
+            className="mr-2 visible sm:hidden"
             onClick={toggleDrawer(true)}
-          >
-            <AiOutlineMenu />
-          </IconButton>
+          />
         </div>
         <Drawer
           anchor="right"
