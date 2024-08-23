@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+      <meta name="google-site-verification" content="obJAsyVkd4IxDydC9wOWijY8O1wCeTLiovFsz000bfw" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Abayo Hirwa Jovin's portfolio showcasing software development skills." />
         <meta property="og:title" content="Abayo Hirwa Jovin - Portfolio" />
