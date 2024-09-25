@@ -27,6 +27,13 @@ const Projects = () => {
       website: "https://artify-jov.vercel.app",
       demoImg: "/art.png",
     },
+    {
+      name: "HomeDel",
+      madeWith: "Reactjs, Vite, Tailwindcss,nodejs",
+      github: "https://github.com/AbayoHJovin/fashionix",
+      website: "https://shopin-xi.vercel.app/",
+      demoImg: "/homeDel.png",
+    },
   ];
 
   const projectsToShow = showAll ? myProjects : myProjects.slice(0, 6);
@@ -89,27 +96,6 @@ const Projects = () => {
            )
     
           ))}
-          <div className="relative w-[90%] max-w-[320px] p-3 bg-gray-100 dark:bg-[#18141c] group rounded-md transition-transform duration-300 transform hover:scale-105">
-            <Image
-              src="/fashionix.png"
-              alt="fashionix"
-              className="w-full h-auto object-cover rounded-lg"
-              layout="responsive"
-              width={600}
-              height={375}
-            />
-            <div className="absolute inset-0 bg-gray-200 text-black rounded-lg flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h1>This is still being developed</h1>
-            </div>
-            <div className="p-4 rounded-b-lg">
-              <h2 className="text-xl font-semibold text-black dark:text-white">
-                Fashionix
-              </h2>
-              <p className="text-[#6b7280]">
-                Tech Stack: Reactjs, Tailwindcss, Nodejs, Material-UI
-              </p>
-            </div>
-          </div>
         </div>
       </div>
       <div className="flex justify-center mt-6">

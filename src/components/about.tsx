@@ -115,7 +115,7 @@ export default function About() {
                   <p className="text-lg text-[#6b7280]">
                     Name: Abayo Hirwa Jovin
                   </p>
-                  <p className="text-lg text-[#6b7280]">Location: Rwanda</p>
+                   <p className="text-lg text-[#6b7280]">Location: Rwanda</p>
                   <p className="text-lg text-[#6b7280]">
                     Email: abayohirwajovin@gmail.com
                   </p>
