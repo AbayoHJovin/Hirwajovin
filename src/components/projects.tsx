@@ -31,7 +31,7 @@ const Projects = () => {
       name: "HomeDel",
       madeWith: "Reactjs, Vite, Tailwindcss,nodejs",
       github: "https://github.com/AbayoHJovin/fashionix",
-      website: "https://shopin-xi.vercel.app/",
+      website: "https://homedel.vercel.app/",
       demoImg: "/homeDel.png",
     },
   ];
