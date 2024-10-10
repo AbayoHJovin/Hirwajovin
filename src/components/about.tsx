@@ -18,6 +18,7 @@ import {
 } from "react-icons/si";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { FaJava } from "react-icons/fa";
 
 export default function About() {
   const [loading, setLoading] = useState(true);
@@ -47,7 +48,10 @@ export default function About() {
     { lang: "MySQL", logo: <DiMysql />, color: "#00758F" },
   ];
 
-  const Others = [{ lang: "Python", logo: <SiPython /> }];
+  const Others = [
+    { lang: "Python", logo: <SiPython /> },
+    { lang: "Java", logo: <FaJava /> },
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
@@ -115,7 +119,7 @@ export default function About() {
                   <p className="text-lg text-[#6b7280]">
                     Name: Abayo Hirwa Jovin
                   </p>
-                   <p className="text-lg text-[#6b7280]">Location: Rwanda</p>
+                  <p className="text-lg text-[#6b7280]">Location: Rwanda</p>
                   <p className="text-lg text-[#6b7280]">
                     Email: abayohirwajovin@gmail.com
                   </p>
