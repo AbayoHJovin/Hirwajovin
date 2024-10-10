@@ -19,6 +19,7 @@ import {
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { FaJava } from "react-icons/fa";
+import Image from "next/image";
 
 export default function About() {
   const [loading, setLoading] = useState(true);
@@ -49,8 +50,8 @@ export default function About() {
   ];
 
   const Others = [
-    { lang: "Python", logo: <SiPython /> },
-    { lang: "Java", logo: <FaJava /> },
+    { lang: "Python", logo: "/python.png" },
+    { lang: "Java", logo: "/Java.png" },
   ];
 
   useEffect(() => {
@@ -238,7 +239,15 @@ export default function About() {
                           key={index}
                           className="flex flex-col items-center space-y-2 mb-4"
                         >
-                          <div className="text-6xl">{skill.logo}</div>
+                          <div className="w-16 h-16 flex items-center justify-center">
+                            {" "}
+                            <Image
+                              src={skill.logo}
+                              alt={skill.lang}
+                              width={50}
+                              height={50}
+                              className="object-contain" />
+                          </div>
                           <h1 className="text-black dark:text-white">
                             {skill.lang}
                           </h1>
